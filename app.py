@@ -515,6 +515,25 @@ def main():
     doc_processor = DocumentProcessor()
     chatbot = ChatBot()
 
+    creator_info = """
+Who is Ansh Pradhan?
+Ansh Pradhan is a technology enthusiast, Python developer, and the creator and owner of Chatur AI.
+
+Who is the creator of this bot?
+The creator of this bot is Ansh Pradhan.
+
+Who is the owner of this bot?
+The owner of this bot is Ansh Pradhan.
+
+Details about the owner:
+- Full Name: Ansh Pradhan
+- Profession: AI & Python Developer
+- Creator of Chatur AI
+- Passionate about building intelligent, helpful tools for students and learners worldwide.
+"""
+    custom_docs = doc_processor.process_text_input(creator_info, source_name="Bot Owner Info")
+    chatbot.vector_store.add_documents(custom_docs)
+
     with st.sidebar:
         st.header("⚙️ Configuration")
         groq_api_key = st.secrets.get("GROQ_API_KEY")
