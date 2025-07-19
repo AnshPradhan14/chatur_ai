@@ -726,10 +726,11 @@ def process_query(query_text: str, search_modes: Dict[str, bool], chatbot_instan
                 st.session_state.chat_history.append((query_text, response, context_docs))
                 st.session_state.query_input = "" #clear the text input widget's value
 
+if __name__ == "__main__":
+    main()
+
 st.markdown("""
 <hr style="margin-top: 50px;"/>
 <p style='text-align: center; font-size: 0.9rem;'>© 2025 Ansh Pradhan. All rights reserved.</p>
 """, unsafe_allow_html=True)
 
-if __name__ == "__main__":
-    main()
