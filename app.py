@@ -453,8 +453,6 @@ General Principles:
 - Confirm understanding when relevant.
 - Cite sources or show document context if it strengthens your explanation.
 
-Date: Saturday, July 19, 2025, 10:56 PM IST
-
 Your goal: Help users master study concepts, clarify doubts, and have a positive learning experience!
 
 
@@ -517,19 +515,51 @@ def main():
 
     creator_info = """
 Who is Ansh Pradhan?
-Ansh Pradhan is a technology enthusiast, Python developer, and the creator and owner of Chatur AI.
+Ansh Pradhan is creator of ChaturAI. He is a 4th year Computer Engineering student at the Institute of Advanced Research - Gandhinagar, specializing in Artificial Intelligence and Machine Learning.
+A passionate Python developer and AI enthusiast, he is committed to creating intelligent, accessible tools that solve real-world problems and enhance learning experiences.
 
-Who is the creator of this bot?
-The creator of this bot is Ansh Pradhan.
+Who is the creator of this bot? \ Who created this bot?
+Chatur AI was built and deployed by Ansh Pradhan. Originally developed using Python, LangChain, Streamlit, and Groq's LLMs, it now runs as a fully functional Telegram chatbot enhanced with Vector Database-powered memory and retrieval for personalized, document-based responses.
 
 Who is the owner of this bot?
-The owner of this bot is Ansh Pradhan.
+The owner and developer of this bot is Ansh Pradhan, a student and developer with deep interest in AI and educational tools.
 
 Details about the owner:
 - Full Name: Ansh Pradhan
-- Profession: AI & Python Developer
-- Creator of Chatur AI
-- Passionate about building intelligent, helpful tools for students and learners worldwide.
+- Education: B.Tech in Computer Engineering at IAR Gandhinagar
+- Areas of Interest: Artificial Intelligence, Machine Learning, Data Science, Python Development
+- Profession: AI & Python Developer | Hackathon Winner | Tech Community Leader
+- Skills: Python, Scikit-learn, Pandas, LangChain, Streamlit, Git, ML Algorithms, APIs
+- Projects: Chatur AI (intelligent AI tutor bot), BMI predictor, Weather App, and more
+- Motto: Building tools that are helpful, accessible, and intelligent — just like Chatur AI!
+- Connect via linkedIn - https://www.linkedin.com/in/anshpradhan14/
+
+How can I contact the owner?
+You can connect with Ansh Pradhan on LinkedIn:
+https://www.linkedin.com/in/anshpradhan14/
+
+What Powers Chatur AI?
+- Python + LangChain for LLM orchestration
+- Groq LLMs for lightning-fast, token-efficient responses
+- Streamlit for initial UI deployment
+- Telegram Bot API for real-time chat integration
+- FAISS / Chroma Vector DB for contextual memory and document-based Q&A
+- OpenAI Functions / Tools for modular capabilities and intelligent routing
+Chatur AI is designed to assist students, developers, and curious minds by combining conversational intelligence with custom document understanding — making it a powerful study buddy, AI tutor, or knowledge assistant.
+
+About the Creator
+- Name: Ansh Pradhan
+- Education: B.Tech in Computer Engineering (AI Major), IAR Gandhinagar
+- Skills: Python, ML Algorithms, LangChain, LLMs, Streamlit, FAISS, OpenCV, Git, APIs
+- Projects:
+  - Chatur AI – AI-powered chatbot with context-aware retrieval, accessible via Telegram and Streamlit web app.
+  - Age & Gender Detection using CNN
+  - Build Live International Space Station Tracker & Deployed on Streamlit
+  - Stock Price Predictor
+  - Oil Spill Detection System
+  - Aircraft Damage Predictor
+  - Weather Forecast App
+  - BMI Predictor with Health Insights
 """
     custom_docs = doc_processor.process_text_input(creator_info, source_name="Bot Owner Info")
     chatbot.vector_store.add_documents(custom_docs)
