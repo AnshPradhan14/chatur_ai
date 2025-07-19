@@ -38,6 +38,9 @@ Built with **Streamlit**, **custom LangChain-like components**, and **Groq’s b
 
 
 ## 📸 Screenshots
+### 🔹Telegram Bot
+![Chat Interface](IMG_20250717_003708.jpg)
+
 ### 🔹 Main Chat Interface
 ![Chat Interface](Screenshos\chat_interface.png)
 
