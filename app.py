@@ -711,7 +711,7 @@ About the Creator
             st.session_state.chat_history = []
             st.rerun()
 
-#new function for processing query
+#function for processing query
 def process_query(query_text: str, search_modes: Dict[str, bool], chatbot_instance: ChatBot):
     if query_text: #only process if query is not empty
         if not any(search_modes.values()):
@@ -723,16 +723,13 @@ def process_query(query_text: str, search_modes: Dict[str, bool], chatbot_instan
         else:
             with st.spinner("Thinking..."):
                 response, context_docs = chatbot_instance.chat(query_text, search_modes)
-
-                #add to chat history
                 st.session_state.chat_history.append((query_text, response, context_docs))
-
-                #clear the input box after submission
-                #this requires clearing the state for the input key
                 st.session_state.query_input = "" #clear the text input widget's value
 
-            #no need for st.rerun() here, as on_change already triggers a rerun,
-            #and setting st.session_state.query_input = "" will handle the visual clear on next rerun.
+st.markdown("""
+<hr style="margin-top: 50px;"/>
+<p style='text-align: center; font-size: 0.9rem;'>© 2025 Ansh Pradhan. All rights reserved.</p>
+""", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
