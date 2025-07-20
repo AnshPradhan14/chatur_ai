@@ -506,7 +506,7 @@ def main():
         layout="wide"
     )
 
-    st.title("🤖 Chatur AI Chatbot")
+    st.title("Chatur AI Chatbot")
     st.markdown("*Upload your study materials and ask questions with flexible search options*")
 
     #initialize components
