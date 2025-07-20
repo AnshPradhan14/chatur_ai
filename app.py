@@ -502,7 +502,7 @@ Your goal: Help users master study concepts, clarify doubts, and have a positive
 def main():
     st.set_page_config(
         page_title="Chatur AI",
-        page_icon="https://drive.google.com/file/d/12ru9f03HV_6q82MZsx4XuhCplCGkXciz/view?usp=drive_link",
+        page_icon="https://drive.google.com/file/d/1jnlL9AazgsRw_0u93DSzX76D9o0x_jqt/view?usp=drive_link",
         layout="wide"
     )
 
