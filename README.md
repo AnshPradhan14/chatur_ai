@@ -1,4 +1,4 @@
-# 🤖 Chatur AI – Your Personalized AI Study Buddy
+# Chatur AI – Your Personalized AI Study Buddy
 
 Chatur AI is an intelligent, student-friendly chatbot that helps you **learn smarter** by answering questions using:
 - Your **uploaded PDFs**, **pasted text**, or **web URLs**
@@ -11,25 +11,25 @@ Built with **Streamlit**, **custom LangChain-like components**, and **Groq’s b
 - Telegram [Link](https://t.me/chatur_ai_bot)
 - Streamli App [Link](https://chatur-ai.streamlit.app)
 
-## 🚀 Features
+## Features
 
-- 📚 Upload study notes (PDF), paste text, or insert URLs
-- 💬 Ask any academic question
-- 🔍 Uses:
+- Upload study notes (PDF), paste text, or insert URLs
+- Ask any academic question
+- Uses:
   - Vector-based semantic search (SentenceTransformers)
   - TF-IDF fallback for keyword-based relevance
   - Groq LLMs for contextual answers
-- 🧠 Choose which sources to use:
+- Choose which sources to use:
   - Notes-only
   - General AI knowledge
   - Future: Live web search 🌐
-- 📎 Tracks source references with similarity scores
-- 🧼 Clear documents or chat history with one click
-- 🛠 Custom VectorStore (no external DB needed)
+- Tracks source references with similarity scores
+- Clear documents or chat history with one click
+- Custom VectorStore (no external DB needed)
 
 
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Frontend**: [Streamlit](https://streamlit.io/)
 - **LLM Backend**: [Groq API](https://groq.com/)
@@ -40,7 +40,7 @@ Built with **Streamlit**, **custom LangChain-like components**, and **Groq’s b
 
 
 
-## 📸 Screenshots
+## Screenshots
 ### 🔹 Main Chat Interface
 ![Chat Interface](https://github.com/AnshPradhan14/chatur_ai/blob/main/Screenshos/chat_interface.png)
 
@@ -78,7 +78,7 @@ GROQ_API_KEY = "your_groq_api_key_here"
 streamlit run app.py
 ```
 
-## 🧠 How it works (worksflow)
+## How it works (worksflow)
 **1. Document Processing**
 - Extracts and chunks text from PDFs / URLs / pasted text
 - Stores chunks in a custom Vector Store using sentence embeddings
@@ -92,7 +92,7 @@ streamlit run app.py
 - Relevant chunks + question are sent to Groq’s LLM (LLaMA 3)
 - Generates a helpful answer with sources
 
-## 🛣️ Roadmap
+## Roadmap
 - ☑️Multi-source document upload (PDF, text, URL)
 - ☑️Semantic + TF-IDF fallback search
 - ☑️Groq LLM integration
@@ -102,12 +102,12 @@ streamlit run app.py
 - Streamlit Cloud / HuggingFace Spaces deployment
 
 
-## 🙏 Acknowledgments
+## Acknowledgments
 - [Groq](https://groq.com/) for their lightning-fast LLaMA API
 - [Streamlit](https://streamlit.io/) for the rapid UI development
 - [SBERT](https://www.sbert.net/) for Sentence Embeddings
 - All the amazing open-source contributors 🙌
 
 
-## 📄 License
+## License
 This project is licensed under the MIT License.
