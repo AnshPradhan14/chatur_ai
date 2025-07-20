@@ -8,8 +8,8 @@ Chatur AI is an intelligent, student-friendly chatbot that helps you **learn sma
 Built with **Streamlit**, **custom LangChain-like components**, and **Groq’s blazing fast LLaMA 3 models** – Chatur AI turns any study material into a personal tutor.
 
 **Try this Chatur AI bot on**
-Telegram [Link](https://t.me/chatur_ai_bot)
-Streamli App [Link](https://chatur-ai.streamlit.app)
+- Telegram [Link](https://t.me/chatur_ai_bot)
+- Streamli App [Link](https://chatur-ai.streamlit.app)
 
 ## 🚀 Features
 
