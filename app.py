@@ -729,8 +729,8 @@ def process_query(query_text: str, search_modes: Dict[str, bool], chatbot_instan
 if __name__ == "__main__":
     main()
 
-st.markdown("""
-<hr style="margin-top: 50px;"/>
-<p style='text-align: center; font-size: 0.9rem;'>© 2025 Ansh Pradhan. All rights reserved.</p>
-""", unsafe_allow_html=True)
-
+st.markdown(
+    "<hr style='margin-top:30px;margin-bottom:10px;'>"
+    "<div style='text-align:center; color:gray;'>© 2025 Ansh Pradhan. All rights reserved.</div>",
+    unsafe_allow_html=True,
+)
