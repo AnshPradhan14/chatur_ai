@@ -23,7 +23,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from db import users_col, chats_col, messages_col, docs_col, embeddings_col
 from embedder import get_embedding
 # We import DocumentProcessor to handle PDF/Text parsing logic
-from app import DocumentProcessor 
+from docprocessor import DocumentProcessor 
 
 # ============================================================================
 # 1. CONFIGURATION & SETUP
