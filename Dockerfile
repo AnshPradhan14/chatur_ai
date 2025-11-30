@@ -1,22 +1,23 @@
+# Read the doc: https://huggingface.co/docs/hub/spaces-sdks-docker
+# you will also find guides on how best to write your Dockerfile
+
 FROM python:3.9
 
-WORKDIR /code
+# Create a non-root user (required by Hugging Face)
+RUN useradd -m -u 1000 user
+ENV PATH="/home/user/.local/bin:$PATH"
 
-# Copy requirements first to cache dependencies
-COPY ./requirements.txt /code/requirements.txt
+# Set the working directory
+WORKDIR /app
 
-# Install dependencies
-# Using --no-cache-dir to keep image size small
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+# Copy requirements file and install dependencies
+# This is where your ML dependencies will be installed
+COPY --chown=user ./requirements.txt requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-# Copy the rest of the application
-COPY . .
+# Copy your ENTIRE project (including api.py, index.html, db.py, etc.)
+COPY --chown=user . /app
 
-# Create a directory for the embedding model cache and give permissions to user 1000
-RUN mkdir -p /code/.cache && chmod -R 777 /code/.cache
-
-# Switch to non-root user (required by Hugging Face)
-USER 1000
-
-# Start the app
+# The command to start your FastAPI app:
+# Note the change from 'app:app' to 'api:app'
 CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "7860"]
