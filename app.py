@@ -178,10 +178,12 @@ app = FastAPI(
     version="2.5.0"
 )
 
-# CORS Middleware (Allow connection from Frontend)
+from fastapi.middleware.cors import CORSMiddleware
+
+# ... inside your app definition ...
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace '*' with specific domain
+    allow_origins=["http://127.0.0.1:5500", "http://localhost:5500"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -538,7 +540,7 @@ def get_chat_combined_text(chat_id: str, limit_chars: int = 15000) -> str:
     full_text = "\n".join([doc['chunk_text'] for doc in cursor])
     return full_text[:limit_chars]
 
-@app.post("/api/summarize")
+@app.post("/app/summarize")
 def generate_summary(payload: dict, user: dict = Depends(get_current_user)):
     """Generates a Markdown summary with bullet points."""
     chat_id = payload.get("chat_id")
@@ -576,7 +578,7 @@ def generate_summary(payload: dict, user: dict = Depends(get_current_user)):
     except Exception as e:
         return {"summary": f"Error: {str(e)}"}
 
-@app.post("/api/quiz")
+@app.post("/app/quiz")
 def generate_quiz(payload: QuizRequest, user: dict = Depends(get_current_user)):
     """Generates Quiz with user-specified question count."""
     chat_id = payload.chat_id
@@ -622,7 +624,7 @@ def generate_quiz(payload: QuizRequest, user: dict = Depends(get_current_user)):
         logger.error(f"Quiz generation failed: {e}")
         return {"quiz_questions": []}
 
-@app.post("/api/flashcards")
+@app.post("/app/flashcards")
 def generate_flashcards(payload: dict, user: dict = Depends(get_current_user)):
     """Generates Flashcards (LLM decides count based on content density)."""
     chat_id = payload.get("chat_id")
@@ -657,7 +659,7 @@ def generate_flashcards(payload: dict, user: dict = Depends(get_current_user)):
         logger.error(f"Flashcard generation failed: {e}")
         return {"flashcards": []}
 
-@app.post("/api/keywords")
+@app.post("/app/keywords")
 def extract_keywords(payload: KeywordRequest):
     """
     Extracts keywords using TF-IDF (Scikit-Learn).
